@@ -1,5 +1,6 @@
-import React from 'react';
-
+import React, {useState, useEffect} from 'react';
+import {FaLinkedin} from 'react-icons/fa';
+import {FaGithub} from 'react-icons/fa';
 function About() {
     return (
 
@@ -13,7 +14,13 @@ function About() {
         <p>
             Here I would like to present myself
         </p>
-
+        <strong>Links to other platforms:
+    <div className="ext">
+      <a href="https://github.com/JordanTPhysics"><FaGithub size={30} /></a>
+      <a href="https://www.linkedin.com/in/jordan-thijssen-373a431a5/" ><FaLinkedin size={30} /></a>
+      </div>
+      
+       </strong>
 
     </div>
         </section>

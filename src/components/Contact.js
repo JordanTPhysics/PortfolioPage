@@ -1,19 +1,39 @@
 import React, { useState } from "react";
-import {FaLinkedin} from 'react-icons/fa';
-import {FaGithub} from 'react-icons/fa';
+
 import './styles/Contact.css';
 
 
 
 
+export default function Contact() {
 
 
+  const [show, setShow] = useState(false);
 
-function Contact() {
+
+  const showModal = () => {
+    setShow(true);
+    console.log(show);
+  }
+
+  const hideModal = () => {
+    setShow(false);
+    console.log(show);
+  }
+
+  return (
+    <div>
+      <button onClick={() => showModal()} className="button"><h3>Get in contact</h3></button>
+       {show && <Form/> }    </div>
+  )
+}
+
+
+function Form() {
   const [submitted, setSubmitted] = useState(false);
-  const [name, setName] = useState('your');
-  const [email, setEmail] = useState('momma');
-  const [message, setMessage] = useState('sun');
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
   const [pending, setIsPending] = useState(false);
 
 
@@ -35,8 +55,14 @@ function Contact() {
       setIsPending(false);
     })
   }
+  
 
   return (
+    <div className="contact">
+
+    
+
+    <div className='form'>
     <section id='contact'>
         <h1>This is the contact page</h1>
         <form
@@ -67,19 +93,20 @@ function Contact() {
         onChange={(e) =>setMessage(e.target.value)}
         required />
       </div>
-      { !submitted && !pending && <button type="submit">Send message</button>}
+      { !submitted && !pending && <button type="submit">Submit</button>}
       { !submitted && pending && <button type="submit" disabled>please wait...</button>}
-      {submitted && <button onClick={() => setSubmitted(false)}></button> }
+      {submitted && <button onClick={() => setSubmitted(false)} className='button'></button> }
 
     </form>
 
+
+    
     </section>
+    </div>
+
+  </div>
   )
   }
-
-
-export default Contact;
-
 
 
 

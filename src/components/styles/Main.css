@@ -1,0 +1,11 @@
+.lifelist{
+
+    width: 25vw;
+    height: 45vh;
+    position: relative;
+    background-color: inherit;
+    border: 3rem;
+    border-radius: 50;
+    border-style: groove;
+    
+}
